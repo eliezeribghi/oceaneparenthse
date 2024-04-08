@@ -48,6 +48,7 @@
     "@googlemaps/extended-component-library": "^0.6.8",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@netlify/plugin-nextjs": "^4.41.3",
     "@popperjs/core": "^2.11.8",
     "@stitches/core": "^1.2.8",
     "@svelteuidev/composables": "^0.15.3",
