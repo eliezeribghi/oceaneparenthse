@@ -1,0 +1,119 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.footer-section {
+  position: fixed;
+  font-weight: lighter;
+  position: relative;
+  width: 100%;
+  height: auto;
+
+}
+
+.footer {
+
+  position: relative;
+  width: 100%;
+  padding: 5% 5% 0% 5%;
+  background-color: $primary;
+  color: $primary-light;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+
+.footer-title {
+  margin-top: 1.5em;
+  height: .1em;
+  font-size: .7rem;
+  color: $primary-light;
+  height: 1rem;
+}
+
+
+
+.footer-link {
+  font-weight: lighter;
+  text-decoration: none;
+  color: $primary-light;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+
+.footer-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin: 0;
+  font-size: .7em;
+  color: $primary-light;
+  text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+
+  font-size: .7em;
+}
+
+.about a {
+  color: inherit;
+  /* change la couleur du texte */
+  text-decoration: none;
+  /* retire la soulignement */
+}
+
+
+
+.footer-social a {
+  color: $primary-light;
+  text-decoration: none;
+}
+
+.logo-meta {
+  width: 2rem;
+  height: 2rem;
+}
+
+.footer-bottom {
+  margin: 0%;
+  background-color: $primary;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: $primary-light;
+}
+
+.plantitele {
+  height: auto;
+  padding: 0%;
+}
+
+@include mixins.desktop {
+  .footer-content {
+    height: 15vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+}

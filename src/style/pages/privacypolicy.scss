@@ -1,0 +1,21 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.privacyPolicy {
+    border: $primary solid;
+    margin: 20%;
+    padding: 3em;
+}
+
+.ConfidentialityPolicy {
+
+
+    color: $primary-dark;
+}
+
+.confidentialityPolicy h2 {
+    color: $primary;
+    padding: 2em 0 1em 0;
+    font-size: .9em;
+    margin-top: 0;
+}

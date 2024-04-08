@@ -1,0 +1,485 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+/* Styles spécifiques pour les écrans de petite taille */
+@media screen and (max-width: 62em) {
+
+    .descriptionTitle,
+    .carouselDesktop,
+    .iconDesktop {
+        display: none;
+    }
+}
+.room-composition h2,
+.equipements h2,
+.outdoor-equipment h2,
+.squareService h2,
+.rates h2 {
+    color: $primary;
+   margin: 10%;
+}
+
+/* Conteneur de l'en-tête */
+.containerHeader {
+    height: 92vh;
+    position: relative;
+}
+
+/* Texte dans l'en-tête */
+.texteImgHeader {
+    margin: 2%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    color: $primary-light;
+    font-size: 4em;
+    margin-top: 0;
+}
+
+/* Image dans l'en-tête */
+.imgHeader {
+    transform: scale(1);
+    object-fit: cover;
+    width: 100%;
+    height: 92.3vh;
+}
+
+/* Section principale */
+.sectionPageCottage {
+    list-style: none;
+    margin: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#cottageDescHeading {
+    margin: 2em;
+    color: $primary;
+}
+
+/* Section de l'icône mobile */
+.icon-section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+
+
+/* Détails de la maison */
+.maison-details {
+    margin: 5%;
+}
+
+/* Description */
+.description {
+    padding: 10%;
+    height: auto;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+/* Titre de la description pour les appareils mobiles */
+.descriptionTitleMobile {
+    margin: 10%;
+}
+
+/* Conteneur carré de la description */
+.squareDescription {
+    border: solid $primary 16px;
+    padding: 10%;
+}
+
+/* Composition des chambres */
+.room-composition,
+.equipements {
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+/* Icônes des équipements */
+.equipements img {
+    justify-content: right;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Éléments des équipements */
+.equipement-item {
+    margin-bottom: 1em;
+    display: flex;
+    font-size: 0.8rem;
+}
+
+/* Navigation */
+.navigationLinks {
+    display: flex;
+    justify-content: center;
+    padding: 4%;
+    text-align: center;
+    width: 100vw;
+    height: 15vw;
+    background-color: $primary;
+    overflow: hidden;
+    font-size: 0.6em;
+}
+
+.navigationLinks a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 3%;
+    text-decoration: none;
+}
+
+.navigationLinks a:hover {
+    background-color: $primary-light;
+    color: $primary;
+}
+
+/* Image dans l'en-tête pour les appareils mobiles */
+.imgHeader {
+    margin-top: 0;
+    width: 100vw;
+}
+
+/* Listes non ordonnées */
+ul {
+    list-style: none;
+}
+
+/* Détails de la maison */
+.maison-details {
+    margin-bottom: 20px;
+}
+
+/* Conteneur carré du service */
+.squareService {
+    border: $primary-light solid 16px;
+}
+
+/* Section du service */
+.sectionService {
+    margin-top: 10%;
+    padding: 20px;
+    background-color: $primary;
+}
+
+/* Titre du service */
+.serviceTitle {
+
+
+    color: $primary-light;
+}
+
+/* Liste des services */
+.serviceList {
+    list-style: none;
+    padding: 10%;
+}
+
+.serviceList li {
+    text-align: center;
+    margin-bottom: 8px;
+    color: $primary-light;
+}
+
+.serviceList li::before {
+    display: inline-block;
+    width: 1em;
+    margin-left: -2em;
+}
+
+/* Animation de l'entrée de l'équipement */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation de l'entrée de l'équipement */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Équipement */
+.equipement {
+    height: 50em;
+}
+
+/* Équipement extérieur */
+.outdoor-equipment {
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Titre de l'équipement extérieur */
+.outdoorH2 {
+    color: $primary;
+}
+
+/* Liste des équipements */
+.equipement-list {
+    width: 100vw;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240Px);
+    gap: 2rem 2rem;
+}
+
+/* Élément de l'équipement extérieur */
+.outdoor-equipment li {
+    width: 15rem;
+    flex-shrink: 0;
+    height: auto;
+    padding: 3%;
+    box-sizing: border-box;
+    border: solid 1px $primary;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: slideInRight 0.4s ease-in-out forwards;
+
+    &:nth-child(odd) {
+        animation: slideInRight 0.3s ease-in-out 1s forwards;
+    }
+
+    &:nth-child(even) {
+        animation: slideInLeft 0.3s ease-in-out 1s forwards;
+    }
+}
+
+/* Icône de l'équipement */
+.iconEquipement {
+    flex-shrink: 0;
+}
+
+.iconEquipement img {
+    margin-right: 5%;
+    width: 50px;
+    height: 50px;
+}
+
+/* Services et activités */
+.activities-services {
+    margin-top: 20px;
+}
+
+/* Liste des équipements */
+.equipement-list {
+    font-size: small;
+}
+
+/* Tarifs */
+.rates {
+    text-align: center;
+}
+
+/* Détails des tarifs */
+.tariffDetails {
+    margin-bottom: 10%;
+}
+
+/* Élément des tarifs */
+.tariffItem {
+    margin-bottom: 3%;
+    color: #555;
+}
+
+/* Montant des tarifs */
+.tariffAmount {
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Informations supplémentaires */
+.additionalInfo {
+    font-style: italic;
+    color: #888;
+}
+
+
+@include mixins.tablet {
+
+    /* Styles de la navigation dans la section de la page du cottage */
+    .sectionPageCottage nav {
+        padding: 1em;
+        text-align: center;
+        width: 100vw;
+        height: auto;
+    }
+
+    .navigationLinks {
+        border-left: 5em;
+    }
+
+    /* Styles des liens de navigation */
+    .navigationLinks a {
+
+        padding-left: 2em;
+
+    }
+
+    /* Réglages pour la liste d'équipement */
+    .equipement-list {
+        grid-template-rows: repeat(2, auto);
+    }
+
+}
+
+@include mixins.desktop {
+
+    /* Styles pour l'icône sur les appareils mobiles */
+    .IconMobile {
+        display: none;
+    }
+
+    /* Styles pour la description */
+    .description {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Styles pour le carousel sur les appareils mobiles */
+    .carouselMobile {
+        display: none;
+    }
+
+    /* Styles pour la section principale */
+    .sectionMain {
+        margin: 0% 10% 0 10%;
+    }
+
+    /* Styles pour le titre de la description sur les appareils mobiles */
+    .descriptionTitleMobile {
+        display: none;
+    }
+
+    /* Réglages pour le conteneur de l'en-tête */
+    .containerHeader {
+        position: relative;
+    }
+
+    /* Styles pour la navigation */
+    .navigationLinks {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+        font-weight: lighter;
+    }
+
+    /* Styles pour les liens de navigation */
+    .navigationLinks a {
+        padding: 2%;
+        font-size: 1.7em;
+    }
+
+    /* Réglages pour la description */
+    .description {
+        padding: 0;
+        margin-bottom: 1%;
+        text-align: start;
+    }
+
+    /* Styles pour le conteneur carré de la description */
+    .squareDescription {
+        border: none;
+        padding: 0 2.5% 0 2.5%;
+    }
+
+    /* Styles pour le contenu de la description */
+    .container-text {
+        text-align: start;
+        margin: 1em;
+        width: 100%;
+        letter-spacing: 1;
+    }
+
+    /* Styles pour la composition des chambres */
+    .room-composition {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr 1fr 1fr));
+        gap: 0.5rem;
+    }
+
+    /* Styles pour le titre des chambres */
+   
+
+  
+    /* Styles pour les images des équipements */
+    .equipements-img {
+        width: 5%;
+    }
+
+    /* Styles pour la section des services */
+    .sectionService {
+        width: 100%;
+        border-top: $primary solid 10px;
+        border-bottom: #1e55b3 solid 10px;
+        background-color: initial;
+    }
+
+    /* Réglages pour le conteneur carré des services */
+    .squareService {
+        border: initial;
+    }
+
+  .squareService h2{
+
+    margin: 2%;
+  }
+    /* Styles pour la liste des services */
+    .serviceList {
+        list-style: none;
+        padding: 1%;
+    }
+
+    /* Styles pour les éléments de la liste des services */
+    .serviceList li {
+        text-align: center;
+        margin-bottom: 8px;
+        color: #1e55b39d;
+    }
+
+    /* Styles pour le séparateur des éléments de la liste des services */
+    .serviceList li::before {
+        display: inline-block;
+        width: 1em;
+        background-color: #000000;
+    }
+
+    /* Réglages pour le titre des tarifs */
+    .ratesTitle {
+        margin-bottom: 0.5em;
+    }
+
+    /* Styles pour l'équipement extérieur */
+    .outdoor-equipment {
+        margin-bottom: 5%;
+    }
+}

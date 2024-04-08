@@ -1,0 +1,178 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.section3 {
+
+    overflow: hidden;
+    background-color: $primary;
+    min-width: 100vw;
+    height: auto;
+    padding: 6%;
+}
+
+/* Add your SCSS styles here */
+.gites-rental {
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    letter-spacing: 2px;
+
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 0.7em;
+    position: relative;
+    text-align: center;
+    color: $primary-light;
+    margin-bottom: 6vw;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -60%;
+    left: 0;
+    width: 88vw;
+    height: 1px;
+    /* Ajustez l'épaisseur de la ligne selon vos préférences */
+    background-color: $primary-light;
+    /* Couleur de la ligne */
+}
+
+.rental-image {
+    margin-top: 18%;
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 10, 1);
+    width: 89%;
+     height: auto;
+    padding-right: 10%;
+}
+
+.rental-card {
+    line-height: 1;
+    letter-spacing: 1vw;
+    color: #000000b6;
+    padding: 0 4% 4% 4%;
+    left: 2%;
+    font-weight: 300;
+    margin: 1.7em;
+    position: relative;
+    background-color: rgba(225, 225, 225, 0.426);
+    width: 80%;
+    height: auto;
+    margin-top: calc(-10% - 5%);
+    overflow: hidden;
+}
+
+.textCardH2 {
+  margin: 1em;
+    text-align: left;
+
+
+}
+
+.textCard {
+    letter-spacing: 0.2;
+    text-align: start;
+    font-size: 1em;
+}
+
+.linkCard {
+    text-decoration: none;
+    color: inherit;
+}
+
+@include mixins.tablet {
+    .rental-card {
+        position: fixed;
+        line-height: 1.3;
+        letter-spacing: 1vw;
+        color: #000000b6;
+        padding: 3%;
+        position: relative;
+        background-color: rgba(225, 225, 225, 0.5);
+        width: 70%;
+        margin-top: calc(-1% - 15%);
+        left: 15%;
+        overflow: hidden;
+    }
+
+    .rental-image {
+        padding: 0%;
+        height: 30vh;
+        width: auto;
+  
+    }
+
+}
+
+@include mixins.desktop {
+    .section3 {
+
+        margin-top: 0%;
+        padding: 2% 6% 7% 6%;
+        width: 100vh;
+        height: auto;
+    }
+
+    .title {
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        padding: 0.7em;
+        text-align: center;
+        color: $primary-light;
+        margin-bottom: 6vw;
+    }
+
+    .title::after {
+        display: none;
+    }
+
+    .gites-rental {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .rental-image {
+        width: 15.1875em;
+        height: 100%;
+   
+        justify-content: space-between;
+        margin-top: 0;
+        opacity: 1;
+        transform: matrix(1, 0, 0, 1, 10, 1);
+
+    }
+
+    .rental-card {
+        text-align: start;
+        letter-spacing: 0;
+        color: #000000b6;
+        font-size: 4px;
+        background-color: rgba(225, 225, 225, 0.5);
+        width: 100%;
+        height: 10%;
+        left: 8%;
+
+    }
+
+    .textCardH2 {
+        padding: 0.1em;
+
+        font-size: 0.9rem;
+    }
+
+    .textCard {
+        letter-spacing: 0;
+        font-size: 0.7rem;
+    }
+
+
+
+
+
+}

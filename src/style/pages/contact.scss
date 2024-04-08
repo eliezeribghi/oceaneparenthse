@@ -1,0 +1,134 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.from-section {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  padding: 5% 10% 15% 10%;
+
+}
+
+.section-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-header {
+  width: 8rem;
+  height: auto;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.header-contact {
+  margin: 15% 0 10% 0;
+}
+
+.title-header {
+  color: $primary;
+}
+
+.text-header {
+  padding: 3%;
+  letter-spacing: 0.9px;
+
+  margin: 1%;
+
+  bottom: 10px;
+}
+
+.requis {
+  margin-left: 2%;
+  color: rgba(0, 0, 0, 0.243);
+}
+
+.selectName {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+}
+
+.form-label {
+
+  color: $primary;
+}
+
+.form-lastname,
+.form-name {
+  width: 100%;
+  padding: .3rem;
+  margin-bottom: 10px;
+  border: 1px solid #1e55b349;
+}
+
+
+.contact-form {
+  width: 100%;
+  height: auto;
+}
+
+/* Exemple de style pour les étiquettes */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.common-input {
+  display: block;
+  width: 100%;
+
+  padding: .3rem;
+  margin-bottom: 10px;
+  border: 1px solid #1e55b349;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  padding: 3% 15% 3% 15%;
+  border: solid $primary;
+  cursor: pointer;
+
+}
+
+.submit-button:hover {
+  background-color: $primary;
+  color: $primary-light;
+  opacity: 1;
+
+}
+
+.consent-checkbox {
+  display: flex;
+  text-align: start;
+  font-size: .4em;
+}
+
+.consent-checkbox label {
+  padding: 1em;
+}
+
+.consent-text {
+  margin: 3em;
+  font-size: .3em;
+}
+
+@include mixins.desktop {
+
+  .from-section {
+
+    padding: 3% 30% 10% 30%;
+  }
+
+  .header-contact {
+
+    padding: 0;
+  }
+
+}

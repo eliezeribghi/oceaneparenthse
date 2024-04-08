@@ -1,0 +1,188 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+
+$rond-size: 14em;
+
+/* Styles pour la section du carousel */
+.carousel-container {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -2;
+}
+
+
+
+/* Styles pour le conteneur du logo */
+.logo-container {
+
+  position: relative;
+  border-radius: 50%;
+  width: $rond-size;
+  height: $rond-size;
+
+  background-color: $primary-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: move-left-right .5s alternate;
+
+}
+
+.logo-vendee {
+
+  width: 4em;
+  height: auto;
+}
+
+.logo-container,
+.logo-region {
+  position: absolute;
+  /* ou 'fixed' selon le besoin */
+  z-index: 10;
+  /* Assurez-vous que cette valeur est supérieure à celle du carrousel d'images */
+
+  left: 50%;
+  /* Ajustez selon l'emplacement souhaité */
+  transform: translate(-50%, 90%);
+  /* Centre les logos */
+}
+
+
+/* Animation pour le mouvement gauche-droite du logo */
+@keyframes move-left-right {
+  from {
+    right: calc(100% + 100px);
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+/* Styles pour l'image du logo dans le carousel */
+.logo-slide {
+  position: absolute;
+
+  width: 15em;
+  height: auto;
+  overflow: visible;
+}
+
+/* Styles pour le conteneur du texte et l'en-tête */
+.text-container {
+  justify-self: center;
+  position: absolute;
+  padding: 6vw;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Styles pour l'en-tête du texte */
+.text-container h1 {
+  letter-spacing: 4px;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Positionnement du texte en haut de la section */
+.top-text {
+  top: 14%;
+  left: 0;
+  text-align: center;
+}
+
+
+/* Styles pour le conteneur principal du carousel */
+.carousel-container {
+  width: 100vw;
+  height: auto;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* Styles pour le carousel d'images */
+.image-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Styles pour les images individuelles dans le carousel */
+.carousel-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
+@include mixins.tablet {}
+
+
+
+@include mixins.desktop {
+
+  /* Styles pour la section du carousel pour les écrans plus larges */
+  .carousel-container {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
+    bottom: 0;
+
+  }
+
+  /* Styles pour le carousel d'images pour les écrans plus larges */
+  .image-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  /* Styles pour le texte et l'en-tête pour les écrans plus larges */
+  .text-container {
+    justify-self: center;
+    position: absolute;
+    padding: 1vw;
+    z-index: 2;
+    width: 100%;
+  }
+
+  /* Styles pour l'en-tête du texte pour les écrans plus larges */
+  .text-container h1 {
+    letter-spacing: 4px;
+    color: $primary-light;
+    font-size: 2.25em;
+  }
+
+
+  /* Ajustement du style du logo pour les écrans plus larges */
+  .logo-container {
+    left: 50%;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, 10%);
+    /* Centre les logos */
+  }
+
+  /* stles pour le conteneur du logo-vendée */
+  .logo-region {
+    width: 2em;
+    height: 1em;
+    top: 190%;
+    align-items: end;
+    left: 90%;
+
+  }
+
+}

@@ -1,0 +1,32 @@
+
+
+// 1 - Base
+@use "base/normalize";
+@use "base/base";
+@use "base/fonts";
+
+// 2 - Utils
+@use "utils/mixins";
+
+
+// 3 - Layout
+@use "layout/header";
+@use "layout/footer";
+
+
+// 4 - Components
+@use "components/button";
+@use "components/carousel";
+@use "components/slider";
+@use "components/card";
+@use "components/modal";
+@use "components/icon";
+
+// 5 - Pages
+@use "pages/home";
+@use "pages/commun";
+@use "pages/contact";
+@use "pages/stvincentsurjard";
+@use "pages/privacypolicy";
+@use "pages/agreement";
+@use "pages/info";

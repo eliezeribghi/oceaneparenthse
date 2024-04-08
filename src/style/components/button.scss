@@ -1,0 +1,48 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+/* Styles pour les éléments dans le mode sombre */
+body.darkMode .menuHeader,
+body.darkMode .tariffAmount,
+body.darkMode .additionalInfo,
+body.darkMode .menulink a,
+body.darkMode .tariffItem,
+body.darkMode .requis {
+  background-color: $primary-dark;
+  color: $primary-light;
+}
+
+
+.sectionToToggle,
+.darkMode {
+  border: none !important;
+  background-color: $primary-dark;
+  color: $primary-light;
+
+}
+
+.buttonDarkMode {
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.sunDarkMod,
+.moodDarkMod {
+
+
+  width: 2em;
+  height: auto;
+}
+
+@include mixins.desktop {
+
+  .sunDarkMod,
+  .moodDarkMod {
+
+    margin-top: 9%;
+    width: 1.5em;
+    height: auto;
+  }
+
+
+}

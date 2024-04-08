@@ -1,0 +1,47 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.sectionIcon {
+    margin-top: 10%;
+
+
+}
+
+.icon-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.numberIcon {
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: .2em;
+    color: $primary;
+}
+
+.icon-wrapper {
+    margin: 0 1rem;
+}
+
+.icon-wrapper .icons {
+    width: 1.5em;
+    height: auto;
+}
+
+.icon-wrapper .textIcon {
+    margin-top: 1em;
+    font-size: 0.5rem;
+    text-align: justify;
+}
+
+@include mixins.desktop {
+    .sectionIcon {
+        padding: 1em;
+    }
+
+    .icon-section {
+        margin: 1%;
+    }
+}

@@ -1,0 +1,392 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+/* Styles CSS */
+.descriptionHeader {
+  margin: 25% 0 0% 0;
+  color: $primary;
+  padding: 2em;
+  text-align: center;
+  height: auto;
+}
+
+span .titreDescription {
+
+  font-size: 1.5em;
+}
+
+.main-content-desktop {
+  display: none;
+}
+
+.main-content {
+  padding: 1em;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 1rem;
+  height: auto;
+}
+
+.main-content p {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+.readMore {
+  display: inline-block;
+  padding-top: 1em;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: $primary;
+  background-color: #88888800;
+  border: none;
+  border-radius: 3%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  background-color: $primary-light;
+  border-color: $primary-light;
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.scroll-animation.show {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+#boutonScroll {
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3em;
+  height: 3em;
+  background-color: $primary-lighter;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  z-index: 9999;
+  border: none;
+}
+
+#boutonScroll:hover {
+  background-color: $primary;
+
+}
+
+#boutonScroll span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: .6em .3em 0 .3em;
+  border-color: #fff transparent transparent transparent;
+
+}
+
+.sectionTexteLieu .titreLieu {
+  color: $primary;
+  font-size: 1.7em;
+  padding: 2em;
+}
+
+.sectionTexteLieu {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 10% 5% 10%;
+}
+
+.additional-content {
+  display: none;
+}
+
+.tourist-site {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+  border: .1em solid $primary;
+  padding: 2em;
+  border-radius: 5px;
+}
+
+.site-image {
+  order: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-image img {
+  display: block;
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+}
+
+.site-description {
+  order: 2;
+  text-align: center;
+}
+
+.site-description h2 {
+  padding: 3em 0 1em 0;
+  font-size: 1.5em;
+  color: $primary;
+}
+
+.site-description p {
+  color: $primary-dark;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+.linkPlace {
+  font-size: 1.5em;
+  color: $primary-dark ;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.customDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5em;
+  background: $primary-light;
+  border: .1em solid $primary;
+  border-radius: .4em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+}
+
+.customDialog {
+  font-weight: bold;
+  color: $primary-dark;
+  font-size: 1.5em;
+  line-height: 1.6;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.confirmButton,
+.cancelButton {
+  padding: 6%;
+  background-color: $primary;
+  color: $primary-light;
+  border: none;
+  border-radius: .1em;
+  cursor: pointer;
+  margin: 0 10%;
+  font-size: 1em;
+
+
+}
+
+.modalLieu {
+  margin-top: 13%;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.325);
+  animation: fadeIn 0.5s;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 2em;
+  border: 1px solid $primary;
+  width: 85%;
+  height: auto;
+  border-radius: 1em;
+}
+
+.modalContent img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+}
+
+.modalContent h2 {
+  margin-top: -1.5em;
+  color: $primary;
+  font-size: 1.4em;
+
+}
+
+.modalContent h3 {
+  color: $primary;
+  margin: 10% 0 5% 0;
+  font-size: 1.3em;
+
+}
+
+.modalContent p {
+  color: $primary-dark;
+  font-size: .8em;
+  margin-top: 10%;
+}
+
+.modalContent a {
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary-dark;
+  text-decoration: none;
+}
+
+.modalContent a:hover {
+  color: #b31e1e78;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@include mixins.tablet {
+  .tourist-site {
+    flex-direction: row;
+  }
+
+  .tourist-site:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .site-description {
+    margin: 0 3em 0 2em;
+  }
+
+  .modalLieu {
+    margin-top: 0;
+  }
+}
+
+@include mixins.desktop {
+  .main-content {
+    display: none;
+  }
+
+  .descriptionHeader {
+    margin-top: 10%;
+  }
+
+  .main-content-desktop {
+    display: block;
+    margin: 5em 5em 0em 5em;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-bottom: 5%;
+    border-bottom: 0.5px solid $primary;
+  }
+
+  .main-content-desktop .logoVendee {
+    margin-top: 6%;
+    width: 5em;
+    height: 5em;
+
+  }
+
+  .sectionTexteLieu {
+    margin-top: 0;
+  }
+
+  .titreLieu {
+    margin-top: -1em;
+  }
+
+  .tourist-site {
+    flex-direction: row;
+  }
+
+  .tourist-site:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .site-description {
+    margin: 0 3em 0 2em;
+  }
+
+  .modalLieu {
+
+    padding: 0 6em 0 6em;
+  }
+
+  .modalContent {
+
+    overflow-y: auto;
+  }
+
+  .modalContent h3 {
+
+    margin: 1em;
+  }
+
+  .modalContent p {
+    margin: 0;
+  }
+
+  .customDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: $primary-light;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

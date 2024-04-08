@@ -1,0 +1,30 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+.guillemets {
+  display: flex;
+
+  width: 5em;
+  height: 5em;
+  margin-bottom: 2%;
+}
+
+.review {
+  align-items: center;
+  margin: 2%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+
+}
+
+.titleReview {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 3%;
+  font-size: 25px;
+}
+
+.under {
+  padding: 100px;
+}

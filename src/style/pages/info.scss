@@ -1,0 +1,59 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+
+    .container {
+        margin-top: 10em;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: 100vh;
+    }
+
+    .custom-header {
+     
+        color: #1e55b3;
+font-size: 1.4em;
+        background-color: #fff;
+
+        text-align: center;
+    }
+
+    .custom-main {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .instructions {
+        color: #1e55b3;
+        text-align: center;
+        margin: 1rem;
+    }
+   
+    .text_footer p{
+
+padding-bottom: 2em;
+    }
+    .instructions h2 {
+padding: 1em;
+
+    }
+
+    /* Styles responsives */
+    @media screen and (min-width: 48em) {
+        .custom-main {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .instructions {
+            flex-basis: 100vh;
+            padding-right: 4rem;
+            margin-bottom: 5em;
+        }
+    }

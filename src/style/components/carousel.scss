@@ -1,0 +1,135 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.imageMiniCarousel {
+    width: 100vw;
+    height: 50%;
+
+}
+
+.miniCraousel {
+    position: relative;
+
+}
+
+.prev-button,
+.next-button {
+    margin-top: 30%;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-button {
+    color: $primary-light;
+    text-shadow:
+        -1px -1px 0 #393838,
+        1px -1px 0 #393838,
+        -1px 1px 0 #393838,
+        1px 1px 0 #393838;
+
+    left: 2vw;
+    animation: moveLeftRight 5s alternate infinite;
+    animation: growShrink 3s alternate infinite;
+}
+
+.next-button {
+    color: $primary-light;
+    text-shadow:
+        -1px -1px 0 #393838,
+        1px -1px 0 #393838,
+        -1px 1px 0 #393838,
+        1px 1px 0 #393838;
+    right: 2vw;
+    animation: moveRightLeft 5s alternate infinite;
+    animation: growShrink 3s alternate infinite;
+}
+
+@keyframes growShrink {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes moveLeftRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes moveRightLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+@media screen and (min-width: 48em) {}
+
+@include mixins.desktop {
+    .carousel {
+        top: 5.1em;
+        position: relative;
+
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        margin: 0% 1% 0 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        position: fixed;
+        position: relative;
+        display: flex;
+        transition: transform 11s linear;
+        align-items: center;
+    }
+
+    .imageMiniCarousel {
+        width: 40vw;
+        height: 30vw;
+
+        margin: 0;
+    }
+
+    .image2 {
+        width: 0;
+        height: 0;
+    }
+
+    .prev-button,
+    .next-button {
+        position: absolute;
+        top: .4em;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+
+}
