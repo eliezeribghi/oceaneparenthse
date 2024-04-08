@@ -4,7 +4,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
-  
+
+    # Gestion des erreurs 404
+    FallbackResource /index.php
+
     # Redirection www vers non-www
     RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
