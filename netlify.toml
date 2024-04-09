@@ -13,3 +13,4 @@
 
   [plugins.inputs]
   cloudName = "oceane parenthses"
+  imagesPath = "/src/assets"
