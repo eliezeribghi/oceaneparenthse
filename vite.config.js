@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import compression from "vite-plugin-compression";
 import { copy } from 'vite-plugin-copy'; // Importer le plugin copy
@@ -7,7 +7,7 @@ import assets from 'vite-plugin-assets';
 
 export default defineConfig({
   plugins: [
-    vue(),
+  
     svelte(),
     assets({
       input: 'src/assets', // le dossier où vos images sont stockées
