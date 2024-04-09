@@ -67,6 +67,7 @@
     "http": "^0.0.1-security",
     "lodash": "^4.17.21",
     "module": "^1.1.0",
+    "netlify-plugin-cloudinary": "^1.17.0",
     "node-fetch": "^3.3.2",
     "npm": "^10.5.1",
     "rss-parser": "^3.13.0",
