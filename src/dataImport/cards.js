@@ -10,7 +10,7 @@ export  {rentals}
             name: "Marée haute",
             location: "Saint-Vincent-Sur-Jard",
             details: "1 Chambre | 1 Salle de bain | 2 Hôtes",
-            imageUrl: "src/assets/imageGites/MH.jpg",
+            imageUrl: "public/imageGites/etale.jpg",
             link: "/#/haute",
             title: "photo de Marée haute" // Titre associé à l'image
         },
@@ -18,7 +18,7 @@ export  {rentals}
             name: "Étale",
             location: "Saint-Vincent-Sur-Jard",
             details: "3 Chambre | 1 Salle de bain | 6 Hôtes",
-            imageUrl: "src/assets/imageGites/etale.jpg",
+            imageUrl: "public/imageGites/MB.jpg",
             link: "/#/etale",
             title: "photo de Étale" // Titre associé à l'image
         },
