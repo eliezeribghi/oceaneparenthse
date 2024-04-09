@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import compression from "vite-plugin-compression";
-import {copy} from 'vite-plugin-copy'; // Importer le plugin copy
+import { copy } from 'vite-plugin-copy'; // Importer le plugin copy
 
 export default defineConfig({
   plugins: [
